@@ -1,0 +1,120 @@
+<html ng-app="formApp">
+    <head>
+        <title>Fomulário de Cadastro</title>
+        <script src="angular-1.8.2/angular.js"></script>
+        <script src="controller.js"></script>
+        <link rel="stylesheet" href="bootstrap-3.1.1-dist/css/bootstrap.css">
+    </head>
+    <body ng-controller="formCadastroCtrl">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1>Cadastro de Clientes</h1>
+                </div>
+                <div class="panel-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="control-label">Nome da Empresa</label>
+                                    <input ng-model="vm.name" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">CNPJ</label>
+                                    <input ng-model="vm.cnpj" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Razão Social</label>
+                                    <input ng-model="vm.razaoSocial" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">CEP</label>
+                                    <input ng-model="vm.cep" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label class="control-label">Endereço</label>
+                                    <input ng-model="vm.end" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label">N° End.</label>
+                                    <input ng-model="vm.number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-primary panel-footer clearfix">
+                    <div class="pull-right">
+                        <button 
+                            type="button" 
+                            class="btn btn-success" 
+                            ng-click="addForm(vm)"
+                        >
+                            Salvar
+                        </button>
+                        <button 
+                            type="button" 
+                            class="btn btn-danger" 
+                            ng-click="limparFormulario(vm)"
+                        >
+                            Limpar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="padding: 6px;"
+                >
+                    <h3>Exibição Cadastros Realizados</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>CNPJ</th>
+                                            <th>R.Social</th>
+                                            <th>CEP</th>
+                                            <th>End</th>
+                                            <th>N°</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr ng-repeat="key in form">
+                                            <td>{{key.name}}</td>
+                                            <td>{{key.cnpj}}</td>
+                                            <td>{{key.razaoSocial}}</td>
+                                            <td>{{key.cep}}</td>
+                                            <td>{{key.end}}</td>
+                                            <td>{{key.number}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://use.fontawesome.com/62e43a72a9.js"></script>
+        <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
